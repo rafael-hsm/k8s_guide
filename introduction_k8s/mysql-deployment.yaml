@@ -1,23 +1,29 @@
-kubernetes:
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: mysql
-  spec:
-    replicas: 1
-    selector:
-      matchLabels:
-        app: mysql
-    template:
-      metadata:
-        labels:
-          app: mysql
-      spec:
-        containers:
-          - name: mysql
-            image: mysql:8.0
-            env:
-              - name: MYSQL_ROOT_PASSWORD
-                value: "password"
-            ports:
-              - containerPort: 3306
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-deployment
+  template:
+    metadata:
+      labels:
+        app: mysql-deployment
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "wordpress-2020"
