@@ -1,6 +1,6 @@
 # Kubernetes Study Guide
 
-This repository serves as a comprehensive study guide and practical reference for learning Kubernetes. It contains hands-on examples, configurations, and notes organized by topic to support your Kubernetes learning journey.
+A comprehensive Kubernetes study guide with hands-on examples, configurations, and practical notes. Based on the Udemy course "Kubernetes with HELM: Kubernetes for Absolute Beginners". Covers pods, containers, ConfigMaps, Secrets, RBAC, and local development with Kind. Perfect for DevOps learning.
 
 ## 📚 Course Reference
 
